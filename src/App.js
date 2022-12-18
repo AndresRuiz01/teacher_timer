@@ -14,18 +14,16 @@ const teacher_timers = [
   {title: "Clean Up", length: 2},
 ]
 
-const test_timers = [
-  {title: "Test 1", length: 0.1},
-  {title: "Test 2", length: 0.13},
-  {title: "Test 3", length: 0.1}
-]
-
+// const test_timers = [
+//   {title: "Test 1", length: 0.1},
+//   {title: "Test 2", length: 0.13},
+//   {title: "Test 3", length: 0.1}
+// ]
 
 function App() {
   return (
     <div className="App">
       <TimerManager timers={teacher_timers}/>
-      {/* <StationTimer timers={teacher_timers} /> */}
     </div>
   );
 }

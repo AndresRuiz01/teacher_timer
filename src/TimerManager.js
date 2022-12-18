@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import Timer from "./Timer";
 import './TimerManager.css'
-
+import sound from './test.mp3'
 
 function TimerManager({timers}) {
-
-  // const { seconds } = Timer(12);
   const [currentTimerIndex, setCurrentTimerIndex] = useState(0)
   const [currentTimerTitle, setCurrentTimerTitle] = useState("")
   const [isTimersDone, setIsTimersDone] = useState(false)
@@ -16,9 +14,7 @@ function TimerManager({timers}) {
 
   if (seconds === 0 && !isUpdating) {
     setIsUpdating(true)
-    console.log("timer done, next timer", currentTimerIndex, timers.length -1 );
     if (currentTimerIndex === timers.length - 1) {
-      console.log("last timer were done folks");
       setIsTimersDone(true)
     } else {
       setCurrentTimerIndex(currentTimerIndex + 1)
@@ -52,33 +48,14 @@ function TimerManager({timers}) {
   }, [])
 
   function repeatedAudio(n) {
-    playAudio();
+    new  (sound).play();
     var i = 0, 
     interval = setInterval(function() {
-        playAudio();
+        new Audio(sound).play();
         i++;
         if(i >= n-1) clearInterval(interval); // stop it
     }, 1000);
   }
-
-  function playAudio() {
-    var audio = new Audio('https://assets.coderrocketfuel.com/pomodoro-times-up.mp3')
-    audio.load()
-    const audioPromise = audio.play()
-    if (audioPromise !== undefined) {
-      audioPromise
-        .then(_ => {
-          // autoplay started
-        })
-        .catch(err => {
-          // catch dom exception
-          console.info(err)
-          console.log(audio)
-        })
-    }
-
-  }
-
 
   var percentageComplete = (723 - ((seconds / (timers[currentTimerIndex].length * 60)) * 723))
 
@@ -86,13 +63,7 @@ function TimerManager({timers}) {
     <div onClick={() => {setIsAudioActive(true)}}>
       {!isAudioActive && <div className="timerInfo">Click timer to Activate Audio</div>}
       {isTimersDone && <div>Timers are Complete</div>}
-      <audio className="audio-element">
-        <source src="https://assets.coderrocketfuel.com/pomodoro-times-up.mp3" type="audio/wav"></source>
-      </audio>
-      <div className="timerInfo">
-        {/* <div>{currentTimerTitle}</div>
-        <div>{seconds}</div> */}
-      </div>
+      
       {!isTimersDone && <div>
         <div className="skill">
           <div className="outer">
@@ -104,18 +75,7 @@ function TimerManager({timers}) {
         </div>
 
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="50vw" height="50vh">
-          {/* <defs> */}
-              {/* <linearGradient id="GradientColor">
-                <stop offset="0%" stop-color="#e91e63" />
-                <stop offset="100%" stop-color="#673ab7" />
-              </linearGradient> */}
-          {/* </defs> */}
-          {/* <circle cx="100" cy="100" r="90" /> */}
-          {/* <circle cx="25vh" cy="25vh" r="45%" style={{strokeDashoffset: percentageComplete}}/> */}
-          {/* <circle cx="50vw" cy="50vh" r="20%"/> */}
-          {/* <circle cx="25vw" cy="25vh" r="220" style={{strokeDashoffset: percentageComplete}}/> */}
           <circle cx="25vw" cy="25vh" r="115" style={{strokeDashoffset: percentageComplete}}/>
-          {/* <circle cx="25vw" cy="25vh" r="130"/> */}
         </svg>
       </div>}
 
