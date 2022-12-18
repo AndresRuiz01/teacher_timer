@@ -48,7 +48,7 @@ function TimerManager({timers}) {
   }, [])
 
   function repeatedAudio(n) {
-    new  (sound).play();
+    new Audio(sound).play();
     var i = 0, 
     interval = setInterval(function() {
         new Audio(sound).play();

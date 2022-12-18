@@ -3,7 +3,7 @@ import TimerManager from './TimerManager';
 // import StationTimer from './StationTimer';
 
 const teacher_timers = [
-  {title: "Get Ready", length: 1},
+  {title: "Get Ready", length: 0.05},
   {title: "Station One", length: 13},
   {title: "Transition", length: 1},
   {title: "Station Two", length: 13},
