@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/teacher_timer/static/css/main.73484fe3.css",
-    "main.js": "/teacher_timer/static/js/main.87613c17.js",
+    "main.js": "/teacher_timer/static/js/main.0c034856.js",
+    "static/media/ding.mp3": "/teacher_timer/static/media/ding.277a4af15684cf18bfbb.mp3",
     "index.html": "/teacher_timer/index.html",
     "main.73484fe3.css.map": "/teacher_timer/static/css/main.73484fe3.css.map",
-    "main.87613c17.js.map": "/teacher_timer/static/js/main.87613c17.js.map"
+    "main.0c034856.js.map": "/teacher_timer/static/js/main.0c034856.js.map"
   },
   "entrypoints": [
     "static/css/main.73484fe3.css",
-    "static/js/main.87613c17.js"
+    "static/js/main.0c034856.js"
   ]
 }
