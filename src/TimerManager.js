@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Timer from "./Timer";
 import './TimerManager.css'
-import sound from './test.mp3'
+import sound from './ding.mp3'
 
 function TimerManager({timers}) {
   const [currentTimerIndex, setCurrentTimerIndex] = useState(0)
@@ -9,7 +9,6 @@ function TimerManager({timers}) {
   const [isTimersDone, setIsTimersDone] = useState(false)
   const {seconds} = Timer(timers[currentTimerIndex].length)
   const [isUpdating, setIsUpdating] = useState(false)
-  const [isAudioActive, setIsAudioActive] = useState(false)
   const [stringTime, setStringTime] = useState("")
 
   if (seconds === 0 && !isUpdating) {
@@ -43,10 +42,6 @@ function TimerManager({timers}) {
 
   }, [currentTimerIndex])
 
-  useEffect(() => {
-    
-  }, [])
-
   function repeatedAudio(n) {
     new Audio(sound).play();
     var i = 0, 
@@ -60,10 +55,8 @@ function TimerManager({timers}) {
   var percentageComplete = (723 - ((seconds / (timers[currentTimerIndex].length * 60)) * 723))
 
   return (
-    <div onClick={() => {setIsAudioActive(true)}}>
-      {!isAudioActive && <div className="timerInfo">Click timer to Activate Audio</div>}
+    <div>
       {isTimersDone && <div>Timers are Complete</div>}
-      
       {!isTimersDone && <div>
         <div className="skill">
           <div className="outer">
@@ -73,12 +66,10 @@ function TimerManager({timers}) {
             </div>
           </div>
         </div>
-
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="50vw" height="50vh">
           <circle cx="25vw" cy="25vh" r="115" style={{strokeDashoffset: percentageComplete}}/>
         </svg>
       </div>}
-
     </div>
   );
 }
