@@ -10,37 +10,37 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const teacher_timers_14 = [
   {title: "Get Ready", length: 1},
-  {title: "Station One", length: 14},
+  {title: "Station 1", length: 14},
   {title: "Transition", length: 1},
-  {title: "Station Two", length: 14},
+  {title: "Station 2", length: 14},
   {title: "Transition", length: 1},
-  {title: "Station Three", length: 14},
+  {title: "Station 3", length: 14},
   {title: "Transition", length: 1},
-  {title: "Station Four", length: 14},
+  {title: "Station 4", length: 14},
   {title: "Clean Up", length: 2},
 ]
 
 const teacher_timers_13 = [
   {title: "Get Ready", length: 1},
-  {title: "Station One", length: 13},
+  {title: "Station 1", length: 13},
   {title: "Transition", length: 1},
-  {title: "Station Two", length: 13},
+  {title: "Station 2", length: 13},
   {title: "Transition", length: 1},
-  {title: "Station Three", length: 13},
+  {title: "Station 3", length: 13},
   {title: "Transition", length: 1},
-  {title: "Station Four", length: 13},
+  {title: "Station 4", length: 13},
   {title: "Clean Up", length: 2},
 ]
 
 const teacher_timers_12 = [
   {title: "Get Ready", length: 1},
-  {title: "Station One", length: 12},
+  {title: "Station 1", length: 12},
   {title: "Transition", length: 1},
-  {title: "Station Two", length: 12},
+  {title: "Station 2", length: 12},
   {title: "Transition", length: 1},
-  {title: "Station Three", length: 12},
+  {title: "Station 3", length: 12},
   {title: "Transition", length: 1},
-  {title: "Station Four", length: 12},
+  {title: "Station 4", length: 12},
   {title: "Clean Up", length: 2},
 ]
 
@@ -93,7 +93,7 @@ function App() {
       </div>}
 
       {/* Back Button */}
-      {(show12Timer || show13Timer) && <div id="back-button">
+      {(show12Timer || show13Timer || show14Timer) && <div id="back-button">
         <IconButton size="large" onClick={displayOptions}>Back
           {/* <ArrowBackIcon color="primary" fontSize="large" /> */}
         </IconButton>
